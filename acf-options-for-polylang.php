@@ -46,7 +46,7 @@ class BEA_ACF_For_Polylang {
 	 * @return bool|string
 	 */
 	public static function get_current_site_lang() {
-		return function_exists( 'pll_current_language' ) ? pll_current_language( 'locale' ) : get_locale();
+		return apply_filters( 'acf_options_current_language', function_exists( 'pll_current_language' ) ? pll_current_language( 'locale' ) : get_locale() );
 	}
 
 	/**
